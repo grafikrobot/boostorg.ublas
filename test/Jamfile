@@ -47,7 +47,7 @@ UBLAS_TESTSET_SPARSE_COO ?=
 
 
 # Project settings
-project boost-ublas-test
+project
     : requirements
        <define>BOOST_UBLAS_NO_EXCEPTIONS
        <toolset>vacpp:<define>"BOOST_UBLAS_NO_ELEMENT_PROXIES"
@@ -121,6 +121,7 @@ test-suite numeric/uBLAS
       [ run test4.cpp
             test42.cpp
             test43.cpp
+            /boost/math//boost_math
         : : :
             <define>$(UBLAS_TESTSET)
       ]
@@ -165,61 +166,62 @@ test-suite numeric/uBLAS
       ]
       [ run triangular_layout.cpp
       ]
-      [ run comp_mat_erase.cpp
+      [ run comp_mat_erase.cpp /boost/test//boost_test
         : : :
             <toolset>msvc:<asynch-exceptions>on
       ]
-      [ run sparse_view_test.cpp
+      [ run sparse_view_test.cpp /boost/test//boost_test
         : : :
             <toolset>msvc:<asynch-exceptions>on
       ]
-      [ run begin_end.cpp
+      [ run begin_end.cpp /boost/math//boost_math
       ]
-      [ run num_columns.cpp
+      [ run num_columns.cpp /boost/math//boost_math
       ]
-      [ run num_rows.cpp
+      [ run num_rows.cpp /boost/math//boost_math
       ]
-      [ run size.cpp
+      [ run size.cpp /boost/math//boost_math
       ]
-      [ run test_coordinate_matrix_sort.cpp
+      [ run test_coordinate_matrix_sort.cpp /boost/math//boost_math
       ]
-      [ run test_coordinate_matrix_sort.cpp
+      [ run test_coordinate_matrix_sort.cpp /boost/math//boost_math
        :
        :
        : <define>BOOST_UBLAS_COO_ALWAYS_DO_FULL_SORT
        : test_coordinate_matrix_always_do_full_sort
        :
       ]
-      [ run test_complex_norms.cpp
+      [ run test_complex_norms.cpp /boost/math//boost_math
       ]
-      [ run test_scaled_norm.cpp
+      [ run test_scaled_norm.cpp /boost/math//boost_math
        : : :
            <define>BOOST_UBLAS_SCALED_NORM
       ]
-      [ run test_assignment.cpp
+      [ run test_assignment.cpp /boost/timer//boost_timer /boost/math//boost_math
        : : :
            <define>BOOST_UBLAS_COO_ALWAYS_DO_FULL_SORT
+           <define>BOOST_TIMER_ENABLE_DEPRECATED
       ]
       [ run test_triangular.cpp
        :
        :
        : <library>/boost/timer//boost_timer
       ]
-      [ run test_ticket7296.cpp
+      [ run test_ticket7296.cpp /boost/math//boost_math
         :
         :
         : <toolset>msvc:<cxxflags>/wd4127 # The program checks that test facilities work fine. The warning appears many times.
         :
         :
       ]
-      [ run test_inplace_solve.cpp
+      [ run test_inplace_solve.cpp /boost/math//boost_math
         : 
         : 
         : <define>$(UBLAS_TESTSET)
         : test_inplace_solve_basic
         :
       ]
-      [ run test_inplace_solve.cpp
+      [ run test_inplace_solve.cpp /boost/math//boost_math
         : 
         : 
         : <define>$(UBLAS_TESTSET_SPARSE)
@@ -227,30 +229,30 @@ test-suite numeric/uBLAS
         : test_inplace_solve_sparse
         :
       ]
-      [ run test_inplace_solve.cpp
+      [ run test_inplace_solve.cpp /boost/math//boost_math
         : 
         : 
         : <define>USE_MAPPED_VECTOR_OF_MAPPED_VECTOR
         : test_inplace_solve_mvov
         :
       ]
-      [ run test_coordinate_vector_inplace_merge.cpp
+      [ run test_coordinate_vector_inplace_merge.cpp /boost/math//boost_math
       ]
-      [ run test_coordinate_matrix_inplace_merge.cpp
+      [ run test_coordinate_matrix_inplace_merge.cpp /boost/math//boost_math
       ]
-      [ run test_banded_storage_layout.cpp
+      [ run test_banded_storage_layout.cpp /boost/math//boost_math
         :
         :
-        :
-        :
-        :
-      ]
-      [ run test_fixed_containers.cpp
         :
         :
         :
       ]
-      [ run test_matrix_vector.cpp
+      [ run test_fixed_containers.cpp /boost/math//boost_math
+        :
+        :
+        :
+      ]
+      [ run test_matrix_vector.cpp /boost/math//boost_math
       ]
       [ compile minimal_allocator_test.cpp ]
     ;
