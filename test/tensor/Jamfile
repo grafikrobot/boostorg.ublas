@@ -11,6 +11,7 @@
 #  Google and Fraunhofer IOSB, Ettlingen, Germany
 #
 
+import-search /boost/config/checks ;
 import config : requires ;
 
 project boost/ublas/test/tensor
@@ -93,6 +94,6 @@ test-suite boost-ublas-tensor-test
           :
           : test_tensor
           :
-          # 
+          #
     ]
     ;
