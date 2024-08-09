@@ -23,7 +23,7 @@ project boost/ublas/test/tensor
 
 alias unit_test_framework
     : # sources
-        /boost/test//unit_test_framework
+        /boost/test//boost_unit_test_framework
     ;
 
 # make aliases explicit so the libraries will only be built when requested
