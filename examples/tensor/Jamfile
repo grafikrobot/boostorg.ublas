@@ -12,6 +12,7 @@ import config : requires ;
 # Project settings
 project
     : requirements
+       <library>/boost/ublas//boost_ublas
        <define>BOOST_UBLAS_NO_EXCEPTIONS
        <toolset>vacpp:<define>"BOOST_UBLAS_NO_ELEMENT_PROXIES"
        <toolset>gcc:<cxxflags>"-Wall -pedantic -Wextra -Wno-unknown-pragmas"

@@ -5,7 +5,9 @@
 # LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
 project
-    : requirements <library>/boost/program_options//boost_program_options
+    : requirements
+        <library>/boost/ublas//boost_ublas
+        <library>/boost/program_options//boost_program_options
     ;
 
 exe add : add.cpp ;

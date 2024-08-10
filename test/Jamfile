@@ -49,6 +49,7 @@ UBLAS_TESTSET_SPARSE_COO ?=
 # Project settings
 project
     : requirements
+       <library>/boost/ublas//boost_ublas
        <define>BOOST_UBLAS_NO_EXCEPTIONS
        <toolset>vacpp:<define>"BOOST_UBLAS_NO_ELEMENT_PROXIES"
        <toolset>gcc:<cxxflags>"-Wall -Wno-unknown-pragmas"
